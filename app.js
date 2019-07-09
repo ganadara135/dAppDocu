@@ -28,6 +28,8 @@ app.get("/submit", function(req, res){
     
     console.log(owner);
     console.log(web3.eth.accounts[0]);
+	// 아래 부분을 꼭해야함
+	console.log(web3.personal.unlockAccount(web3.eth.accounts[0],"1234"));
 
 	proof.set.sendTransaction(owner, fileHash, {
         from: web3.eth.accounts[0],
